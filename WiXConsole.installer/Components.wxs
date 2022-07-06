@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		
+		<ComponentGroup Id="ProductComponents">
+			
+			<ComponentRef Id="MainAppShortcut" />
+			
+		</ComponentGroup>
+
+		<DirectoryRef Id="INSTALLFOLDER" FileSource="C:\Wix">
+			
+			<Component Id="MainAppShortcut" Guid="{4B9C1FB0-D8C6-4A0A-9786-07FA052246AD}">
+				
+				<Shortcut Id="MainAppShortcut"
+						  Name="WiXConsole"
+						  Target="[INSTALLFOLDER]WiXConsole.exe"
+						  Directory ="InstallProgramMenuFolder"
+						  WorkingDirectory="INSTALLFOLDER"
+						  Icon="icon.ico"
+						  />
+
+				<RegistryValue Id="RegShortcutKey" Root="HKCU" Key="SOFTWARE\$(loc.ProductFolderName)" Name="Shortcut" Value="1" Type="integer" KeyPath="yes" />
+				<RemoveFolder Id="RemoveStartMenu" Directory="InstallProgramMenuFolder" On="uninstall"/>
+				
+			</Component>
+			
+		</DirectoryRef>
+	
+	</Fragment>
+</Wix>

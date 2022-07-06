@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmpF22D40156F8E16FBFA89C752FF9D0EF9" Guid="*">
+                <File Id="fil2DACDED111D2125FD9BAF52808E5CEB0" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-console-l1-1-0.dll" />
+            </Component>
+            <Component Id="cmpD571DFC958168320FBD2D9FC886F151C" Guid="*">
+                <File Id="fil17B6D4224AEC1885E80DC07CC51923FB" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-console-l1-2-0.dll" />
+            </Component>
+            <Component Id="cmp742C123932C1A216E185167E7780B396" Guid="*">
+                <File Id="filD4F5DAB6FC380871476D90A9B278B655" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-datetime-l1-1-0.dll" />
+            </Component>
+            <Component Id="cmp1A7A120EF69B76CF2229F9B3721E45BF" Guid="*">
+                <File Id="fil63BD6A99F0ADD1A45FD16D091CDC2311" KeyPath="yes" Source="$(var.BasePath)\test2file.txt" />
+            </Component>
+            <Component Id="cmp873D70745BE392AC7B08052D33751387" Guid="*">
+                <File Id="fil49BAB685A2FD9744508C490A07B7CA09" KeyPath="yes" Source="$(var.BasePath)\test3file.txt" />
+            </Component>
+            <Component Id="cmp2DC749360F5391CA16D3DE1FC755D7BA" Guid="*">
+                <File Id="fil4FA7F90928A27BCD06A14D499F085E3D" KeyPath="yes" Source="$(var.BasePath)\testtxtfile.txt" />
+            </Component>
+            <Component Id="cmp04FA2D06C8BC6A7024ABEA7A82B14D86" Guid="*">
+                <File Id="filB07B2B931E7B9DD2C30A72C955C75ABD" KeyPath="yes" Source="$(var.BasePath)\WiXConsole.exe" />
+            </Component>
+            <Directory Id="dir569FC48434FFA54E235D51254AD297D5" Name="update">
+                <Component Id="cmpC8D063BE983A76261E80B6808F70BEBD" Guid="*">
+                    <File Id="fil29CFC920B16E8019BFC94B137D8EF0E7" KeyPath="yes" Source="$(var.BasePath)\update\test4file.txt" />
+                </Component>
+                <Component Id="cmp9A0E4B2F7480DEFB7B6FD214C76B2B4B" Guid="*">
+                    <File Id="filF9AEDAF7B375F928C8BBFB2919EE66AE" KeyPath="yes" Source="$(var.BasePath)\update\test5file.txt" />
+                </Component>
+                <Component Id="cmp8E22AB3EE872601103082A141E541A90" Guid="*">
+                    <File Id="fil97D04E2AF28C51F8B4AE8876BFF01643" KeyPath="yes" Source="$(var.BasePath)\update\test6file.txt" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PublishedComponents">
+            <ComponentRef Id="cmpF22D40156F8E16FBFA89C752FF9D0EF9" />
+            <ComponentRef Id="cmpD571DFC958168320FBD2D9FC886F151C" />
+            <ComponentRef Id="cmp742C123932C1A216E185167E7780B396" />
+            <ComponentRef Id="cmp1A7A120EF69B76CF2229F9B3721E45BF" />
+            <ComponentRef Id="cmp873D70745BE392AC7B08052D33751387" />
+            <ComponentRef Id="cmp2DC749360F5391CA16D3DE1FC755D7BA" />
+            <ComponentRef Id="cmp04FA2D06C8BC6A7024ABEA7A82B14D86" />
+            <ComponentRef Id="cmpC8D063BE983A76261E80B6808F70BEBD" />
+            <ComponentRef Id="cmp9A0E4B2F7480DEFB7B6FD214C76B2B4B" />
+            <ComponentRef Id="cmp8E22AB3EE872601103082A141E541A90" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

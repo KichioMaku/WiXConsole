@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<?if $(var.Platform)=x64?>
+	<?define ProductCode = "{B1A0E00D-9A30-4930-A2C2-1A6BE647CE84}"?>
+	<?else?>
+	<?define ProductCode = "{95D62803-DC59-41D6-9D96-FC0CA9FDBF81}"?>
+	<?endif?>
+
+	<!-- Fixed upgrade Id -->
+	<?define UpgradeCode = "{05C441A4-6630-4E95-BE1C-1AAF28EA689F}"?>
+	
+	<!-- Define main product-->
+	<Product Id="$(var.ProductCode)" 
+			 Name="!(loc.ProductName_$(var.Platform))" 
+			 Language="!(loc.Language)" 
+			 Version="1.0.0.0" 
+			 Manufacturer="!(loc.Company)" 
+			 UpgradeCode="$(var.UpgradeCode)">
+
+	<!-- Provide package details -->	
+		<Package InstallerVersion="200" 
+				 Compressed="yes" 
+				 InstallScope="perMachine" 
+				 Platform="$(var.Platform)"
+				 Manufacturer="!(loc.Company)"
+				 Description="!(loc.Description)"
+				 Keywords ="!(loc.Keywords)"
+				 Comments="!(loc.Comments)"
+				 Languages="!(loc.Language)"
+				 />
+	<!-- Downgrade error message -->
+		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)" />
+
+
+	<!-- Include .cab file into .msi file -->
+		<MediaTemplate
+			EmbedCab="no"
+			/>
+	<!-- Define main app icon -->	
+		
+		<Icon Id ="icon.ico" SourceFile="$(var.WiXConsole.ProjectDir)\icon.ico"/>
+
+
+		<!-- Use the icon.ico icon for this installer (shows up in Add/Remove programs) -->
+		<Property Id="ARPPRODUCTICON">icon.ico</Property>
+		
+		<Property Id="ARPURLINFOABOUT">https://support.hidglobal.com/</Property>
+
+		<UIRef Id ="WixUI_Minimal"/>
+
+		<!-- Define components, shortcuts, files etc. for installer -->
+		
+		<Feature Id="ProductFeature" Title="ConsoleApp" Level="1">
+			
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="PublishedComponents" />
+
+
+		</Feature>
+		
+	</Product>
+</Wix>

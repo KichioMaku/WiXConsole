@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+	<String Id="ProductFolderName">ConsoleApp</String>
+	<String Id="ProductName_x86">Console App (32bit)</String>
+	<String Id="ProductName_x64">Console App (64bit)</String>
+	<String Id="Language">1033</String>
+	<String Id="Company">HID Global</String>
+
+	<String Id="Description">Console App Description</String>
+	<String Id="Keywords">Console App Keywords</String>
+	<String Id="Comments">Console App Comments</String>
+	<String Id="DowngradeErrorMessage">A newer version of ConsoleApp is already installed.</String>
+</WixLocalization>
